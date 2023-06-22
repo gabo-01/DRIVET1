@@ -1,0 +1,32 @@
+<div [ngStyle]="card">
+    <h1>LOGIN </h1>
+    <form [formGroup]="formulario" (ngSubmit)="onSubmit()" [ngStyle]="form">
+        <div class="inputForm">  
+            <label for="" [ngStyle]="labels">Correo</label>
+            <input type="email" class="inputs" formControlName="usuario" name="correo" placeholder="Correo" (focus)="focusemail()">
+            <span class="form__bar"></span>
+            <br>
+            <span *ngIf="this.formulario.get('usuario')?.errors?.['required'] && fusuario==true" class="errores" style="color: red; font-size: 10px; position: absolute;">
+                Debe ingresar un email
+            </span>
+            <span *ngIf="this.formulario.get('usuario')?.errors?.['email'] && fusuario==true" class="errores" style="color: red; font-size: 10px; position: absolute;">
+                El mail no es válido
+            </span>
+        </div>  
+        <div class="inputForm"> 
+          <label for="" [ngStyle]="labels">Password</label>
+          <input type="password" class="inputs" formControlName="password" name="password" placeholder="Contraseña" (focus)="focuspass()">
+          <span class="form__bar"></span>
+          <br>
+          <span *ngIf="this.formulario.get('password')?.errors?.['required'] && fpassword==true"  class="errores" style="color: red; font-size: 10px; position: absolute;">
+            Debe ingresar un password
+          </span>
+          <span *ngIf="this.formulario.get('password')?.errors?.['minlength'] && fpassword==true"  class="errores" style="color: red; font-size: 10px; position: absolute;">
+            La contraseña debe ser mayor a 8 digitos
+          </span>
+          </div>
+          <input type="submit" value="Ingresar" [ngStyle]="btn" (click)="todo()">
+        </form>
+    
+        </div>
+        

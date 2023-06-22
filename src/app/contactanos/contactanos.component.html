@@ -1,0 +1,31 @@
+<div [ngStyle]="card">
+    <h1>Formulario de contacto </h1>
+    <form [formGroup]="formulario" (ngSubmit)="onSubmit()" [ngStyle]="form">
+        <div class="inputForm">  
+            <label for="" [ngStyle]="labels">Correo</label>
+            <input type="email" class="inputs" formControlName="usuario" name="usuario" [value]="userData?.email" placeholder="Correo" (focus)="focusemail()">
+            <span class="form__bar"></span>
+            <br>
+        
+        </div>  
+        <div class="inputForm"> 
+          <label for="" [ngStyle]="labels">Nombre</label>
+          <input type="text" class="inputs" formControlName="nombre" name="nombre" [value]="userData?.displayName"placeholder="Contraseña" (focus)="focuspass()">
+          <span class="form__bar"></span>
+          <br>
+        
+          </div>
+          <div class="inputForm"> 
+            <label for="" [ngStyle]="labels">Mensaje</label>
+            <textarea type="text" class="inputs" formControlName="mensaje" name="Escribe aqui" placeholder="Contraseña" (focus)="focuspass()"></textarea>
+           <br>
+            <span *ngIf="this.formulario.get('mensaje')?.errors?.['required'] && fmensaje==false" class="errores" style="color: red; font-size: 10px; position: absolute;">
+                Ingrese opcion
+              </span>
+            <span class="form__bar"></span>
+            <br>
+          
+            </div>
+          <input type="submit" value="Enviar" [ngStyle]="btn" (click)="todo()">
+        </form>
+     

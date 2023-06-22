@@ -1,0 +1,126 @@
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  transform-origin: top;
+  top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 99;
+}
+
+.navbar-search {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-search input {
+  margin-right: 10px;
+  border-radius: 15px;
+  background-color: #333;
+  outline: none;
+  padding: 5px;
+  color: #fff;
+  border: none;
+}
+
+.navbar-search button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.col-12,
+.col-md-6,
+.col-lg-3 {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+@media (min-width: 768px) {
+  .col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+@media (min-width: 992px) {
+  .col-lg-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+}
+
+.card {
+  margin-top: 20px;
+  height: 500px;
+  border-radius: 25%;
+  border: none;
+}
+
+.card:hover {
+  box-shadow: 0 0 7px 6px rgba(0, 0, 0, 0.3);
+}
+
+.contraste-activado .carros .card:hover {
+  box-shadow: 0 0 7px 6px rgb(253, 253, 253);
+}
+
+.card-body {
+  height: 100%;
+}
+
+.carouselExampleIndicators1,
+.carouselExampleIndicators {
+  height: 300px;
+}
+
+.carousel-item {
+  height: 250px;
+}
+
+.carousel-item img {
+  height: 100%;
+  border-radius: 25%;
+}
+
+.boton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.precio {
+  right: 70%;
+}
+
+/* Ajuste para asegurar que la barra de navegación aparezca en la parte superior */
+.navbar {
+  z-index: 9999;
+}

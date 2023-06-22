@@ -1,0 +1,88 @@
+<nav class="navbar navbar-light" style="background-color: var(--c1); max-height: 70px; min-height: 60px;">
+    <div class="container-fluid">
+      <a class="navbar-brand logo" ></a>
+    </div>
+  </nav>
+  
+  <div class="contenedor">
+    <div class="barra_lateral">
+      <div class="arriba">
+        <a class="barra_item" (click)="showSecondComponentData3()">
+          <p> carros Disponibles</p>
+        </a>
+       
+        <a class="barra_item" (click)="showSecondComponentData()">
+          <p>Usuarios</p>
+        </a>
+        
+        <a class="barra_item" (click)="showSecondComponentData2()">
+          <p>Reservas</p>
+        </a>
+        
+        <a class="barra_item" (click)="showSecondComponentData4()">
+          <p>Graficas</p>
+         
+        </a>
+      </div>
+    </div>
+    <div class="titulo">
+        <h1>Bienvenido {{userData?.displayName}}</h1>
+    </div>
+  
+    <div *ngIf="showComponentData4">
+        <div class="container">
+            <h2>GRAFICAS</h2>
+            <app-graficas></app-graficas>
+        </div>
+    </div>
+    <div *ngIf="showComponentData">
+      <div class="container">
+        <h2>List of Users</h2>
+  
+        <ul>
+          <li *ngFor="let user of users">
+            <strong>ID:</strong> {{ user.id }}<br>
+            <strong>Username:</strong> {{ user.usuario }}<br>
+            <strong>Password:</strong> {{ user.password }}<br>
+            <strong>Name:</strong> {{ user.nombre }}<br>
+            <hr>
+          </li>
+        </ul>
+      </div>
+    </div>
+  
+    <div *ngIf="showComponentData2">
+      <div class="container">
+        <h2>Lista de reservas</h2>
+  
+        <ul>
+          <li *ngFor="let reservar of reserva">
+            <strong>Nombre:</strong> {{ reservar.Nombre }}<br>
+            <strong>Modelo:</strong> {{ reservar.Modelo }}<br>
+            <strong>Marca:</strong> {{ reservar.Marca }}<br>
+            <strong>precio:</strong> {{ reservar.precio }}<br>
+            <img src="{{reservar.img1}}" alt="" class="img" width="40" height="40">
+            <hr>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div *ngIf="showComponentData3">
+        <div class="container">
+          <h2>Lista de Carros disponibles </h2>
+    
+          <ul>
+            <li *ngFor="let carro of car">
+              
+              <strong>Modelo:</strong> {{ carro.Modelo }}<br>
+              <strong>Marca:</strong> {{ carro.Marca }}<br>
+              <strong>Precio:</strong> {{ carro.precio }}<br>
+              <img src="{{carro.img1}}" alt="" class="img" width="40" height="40">
+              <hr>
+            </li>
+          </ul>
+        </div>
+      </div>
+  </div>
+  

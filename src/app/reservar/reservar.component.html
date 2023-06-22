@@ -1,0 +1,93 @@
+<div class="reservar">
+  <form [formGroup]="Formrenta" (submit)="Registrar()" >
+  <div>
+    <div  class="card" style="width: 18rem;" >
+      <img class="card-img-top" src="{{this.car?.img1}}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title"></h5>
+        <h5 class="card-title">{{this.car?.Modelo}}</h5>
+        
+      </div>
+      <ul class="list-group list-group-flush">
+     
+        <li class="list-group-item">{{this.car?.Marca}}</li>
+        <li class="list-group-item">{{this.car?.precio | currency}}</li>
+      </ul>
+    
+    </div>
+    </div>
+    
+ 
+  <div>  
+    <div>
+      <h5>{{titulo}}</h5>
+      <label for="nombre" [ngClass]="{'is-invalid': !Formrenta.get('Nombre')?.valid}">Nombre:</label>
+      <input type="text" class="input-style" placeholder="Ingrese su Nombre" formControlName="Nombre"[value]="userData?.displayName">
+
+      <div *ngIf="Formrenta.controls['Nombre'].errors?.['required']" class="invalidfeedback">
+        El nombre es necesario
+      </div>
+    </div>
+    <div>
+      <label for="apellidos" [ngClass]="{'is-invalid':!Formrenta.get('correo')?.valid}">Correo:</label>
+      <input type="text" class="input-style" placeholder="Ingrese su Apellido" formControlName="Apellido" [value]="userData?.email">
+     
+    </div>
+    <div *ngIf="Formrenta.controls['correo'].errors?.['required']" class="invalidfeedback">
+      El Correo  es necesario
+      </div>
+    <div>
+
+      <label for="apellidos" [ngClass]="{'is-invalid':!Formrenta.get('Apellido')?.valid}">Apellidos:</label>
+      <input type="text" class="input-style" placeholder="Ingrese su Apellido" formControlName="Apellido">
+     
+    </div>
+    <div *ngIf="Formrenta.controls['Apellido'].errors?.['required']" class="invalidfeedback">
+      El Apellido es necesario
+      </div>
+    <div>
+      <label for="direccion" [ngClass]="{'is-invalid':!Formrenta.get('Dire')?.valid}">Dirección:</label>
+      <input type="text" class="input-style" placeholder="Ingrese su Direccion" formControlName="Dire">
+     
+    </div>
+    <div *ngIf="Formrenta.controls['Dire'].errors?.['required']" class="invalidfeedback">
+    La direccion es necesaria
+      </div>
+    <div>
+      <label for="fechaNacimiento" [ngClass]="{'is-invalid':!Formrenta.get('FI')?.valid}">Fecha de Renta Inicio:</label>
+      <input type="date" class="input-date" formControlName="FE">
+      </div>
+      <div *ngIf="Formrenta.controls['FE'].errors?.['required']" class="invalidfeedback">
+       La fecha de inicio es nesesaria 
+        </div>
+      <div>
+        <label for="fechaNacimiento" [ngClass]="{'is-invalid':!Formrenta.get('FE')?.valid}">Fecha de Renta Final:</label>
+        <input type="date" class="input-date" formControlName="FI">
+        </div>
+      
+        <div *ngIf="Formrenta.controls['FI'].errors?.['required']" class="invalidfeedback">
+          La fecha de entrega es nesesaria 
+          </div>
+    
+    <button type="submit"  class="btn">Enviar</button>
+    <br>
+    <br>
+
+    <div class="alert alert-success"role="alert" *ngIf=" Formrenta.valid">
+      Formulario correcto
+      </div>
+      <div class="alert alert-danger" role="alert" *ngIf=" !Formrenta.valid">
+        Formulario incorrecto
+      </div>
+
+      <div *ngIf="mostrarElemento">
+         
+        <div class="alert alert-success" role="alert">
+           Reserva correcta
+          </div>
+      </div>
+ 
+  </div>
+</form>
+  </div>
+

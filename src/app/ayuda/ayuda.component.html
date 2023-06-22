@@ -1,0 +1,7 @@
+<div class="chat-container">
+    <button class="chat-button" (click)="toggleChat()">Ayuda</button>
+    <div *ngIf="isChatOpen" class="chat-content">
+      <br>
+      <app-accesibilidad *ngIf="isChatOpen"></app-accesibilidad>
+    </div>
+  </div>

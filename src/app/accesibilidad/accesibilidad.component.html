@@ -1,0 +1,26 @@
+<div>
+  <label for="">Accesibilidad tamano</label>
+  <br>
+    <button (click)="aumento()">Aumentar Tamaño</button>
+    <button (click)="disminucion()">Disminuir Tamaño</button>
+  </div>
+ <div>
+    <div>
+      <label for="">Accesibilidad contraste</label>
+      <button (click)="contraste()" [class.contraste-activado]="accesService.contrasteSeleccionado">
+        {{ accesService.contrasteSeleccionado ? 'Desactivar Contraste' : 'Activar Contraste' }}
+      </button>
+      <br>
+    </div>
+    <div>
+      <label for="">Accesibilidad Sin Img</label>
+      <br>
+    </div>
+    <div>
+      <label for="">Accesibilidad Lectura</label>
+      <button (click)="speakText()">Leer Texto</button>
+      <button (click)="pauseSpeech()">Pausar</button>
+      <button (click)="resumeSpeech()">Continuar</button>
+      <br>
+    </div>
+ </div>

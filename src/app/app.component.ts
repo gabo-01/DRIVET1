@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'DriveT';
+  mostrarChat: boolean = false;
+
+  toggleChat() {
+    this.mostrarChat = !this.mostrarChat;
+  }
 }

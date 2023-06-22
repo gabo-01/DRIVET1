@@ -1,0 +1,31 @@
+
+    <table >
+        <tr>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Imagen</th>
+            <th>Precio</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Direccion</th>
+            <th>Fecha Inicio</th>
+            <th>Fecha Entrega</th>
+            <th>Borrar</th>
+          
+        </tr>
+    <tr *ngFor="let res of reservar">
+        <td>{{res.Marca}}</td>
+        <td>{{res.Modelo}}</td>
+        <td class="img"><img src="{{res.img1}}" alt=""></td>
+        <td>{{res.precio | currency}}</td>
+        <td>{{res.Nombre}}</td>
+        <td>{{res.Apellido}}</td>
+        <td>{{res.Direccion}}</td>
+        <td>{{res.FE}}</td>
+        <td>{{res.FI}}</td>
+        
+        <td><button type="button" (click)="delete(res.id)">BORRAR</button></td>
+      
+      
+    </tr>
+    </table>

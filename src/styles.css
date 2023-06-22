@@ -1,1 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+}
+.contraste-activado {
+  /* Estilos de contraste para todos los elementos secundarios */
+  background-color: #111 !important;
+  color: #fff !important;
+  
+}
+
+
+.contraste-activado * :not(button){
+  /* Estilos de contraste para todos los elementos secundarios */
+  background-color: #111 ;
+  color: #fff ;
+  
+}
+
+
+

@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="acerca">
+    <h1>ACERCA DE NOSOTROS</h1>
+    <br>
+    <br>
+    <span>Somos una empresa dedicada a la renta de vehiculos por un precio más accesible y líderes en el mercado actualmente, es un proyecto de carácter universitario.</span>
+  </div>
+  <div class="equipo">
+    <h1>EQUIPO</h1>
+    <br>
+    <br>
+    <span>Fernando Gabriel Martinez Garcia</span>
+  </div>
+  <h1>VEHICULOS DISPONIBLES</h1>
+  <div class="tabla">
+    <table>
+      <tr>
+        <th>Marca</th>
+        <th>Modelo</th>
+        <th>$Precio</th>
+      </tr>
+      <tr *ngFor="let carro of car">
+        <td>{{ carro.Marca }}</td>
+        <td>{{ carro.Modelo }}</td>
+        <td>${{ carro.precio }}</td>
+      </tr>
+    </table>
+  </div>
+  <div class="Video">
+    <iframe [src]="videoUrl | video" width="560" height="315" frameborder="0"></iframe>
+  </div>
+</div>
